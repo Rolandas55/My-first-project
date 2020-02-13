@@ -3,20 +3,27 @@
 
 using namespace std;
 
-int main(){
-    string pirma, antra, treciav, treciam, vard, r;
-    int ilg;
-    cin >> vard;
-    ilg=vard.length()+14;
-    pirma.append(ilg, '*');
-    antra = '*';
-    antra.append(ilg-2, ' ');
-    antra.append("*");
-    treciav = "* Sveikas, " + vard + "! *";
-    treciam = "* Sveika, " + vard + "!  *";
+void vardas(string vard){
+    string r;
     r=vard.back();
-    if(r=="e" or r=="a")
-    cout << pirma << endl << antra << endl << treciam << endl << antra  << endl << pirma;
-    else cout << pirma << endl << antra << endl << treciav << endl << antra  << endl << pirma;
+    if(r=="e" or r=="a") cout << "* Sveika, " << vard << "!  *" << endl;
+    else cout << "* Sveikas, " << vard << "! *" << endl;
+}
+
+int main(){
+    string vard;
+    int ilg, sk;
+    cin >> vard >> sk;
+    ilg=vard.length()+14;
+    cout << string(ilg, '*') << endl;
+    if(sk>3){
+        sk=sk-3;
+        for(int i=0; i<sk+1; i++)
+            if(i==sk/2) vardas(vard);
+            else cout << "*" << string(ilg-2, ' ') << "*" << endl;
+    }
+    else vardas(vard);
+    cout << string(ilg, '*') << endl;
+
     return 0;
 }
