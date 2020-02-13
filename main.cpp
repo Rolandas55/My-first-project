@@ -15,7 +15,6 @@ int main(){
     treciav = "* Sveikas, " + vard + "! *";
     treciam = "* Sveika, " + vard + "!  *";
     r=vard.back();
-    cout << r;
     if(r=="e" or r=="a")
     cout << pirma << endl << antra << endl << treciam << endl << antra  << endl << pirma;
     else cout << pirma << endl << antra << endl << treciav << endl << antra  << endl << pirma;
